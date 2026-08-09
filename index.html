@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AurinkoLab — Summer 2027 Camps</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--orange:#ff5e1a;--yellow:#ffc83d;--cyan:#20c7e8;--purple:#7c4dff;--ink:#172033}
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{margin:0;font-family:'Plus Jakarta Sans',sans-serif;color:var(--ink);
+background:radial-gradient(circle at 8% 4%,rgba(255,200,61,.25),transparent 25%),radial-gradient(circle at 94% 12%,rgba(32,199,232,.18),transparent 25%),linear-gradient(180deg,#fffaf4,#f7fbff 52%,#fff8f1);overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.42;background-image:radial-gradient(#ff5e1a 1px,transparent 1px),radial-gradient(#20c7e8 1px,transparent 1px);background-size:38px 38px,56px 56px;background-position:0 0,18px 22px;mask-image:linear-gradient(to bottom,black,transparent 82%);z-index:-1}
+.heading-font{font-family:'Space Grotesk',sans-serif}
+.glass{background:rgba(255,255,255,.9);border:2px solid rgba(23,32,51,.07);box-shadow:0 18px 55px rgba(30,41,59,.1);backdrop-filter:blur(14px)}
+.card{transition:transform .3s ease,box-shadow .3s ease}
+.card:hover{transform:translateY(-6px) rotate(-.25deg);box-shadow:8px 12px 0 rgba(32,199,232,.1),0 25px 60px rgba(30,41,59,.13)}
+.sticker{transform:rotate(-2deg)}.sticker:nth-child(2){transform:rotate(2deg)}.sticker:nth-child(3){transform:rotate(-1deg)}
+.section-label{display:inline-flex;align-items:center;gap:.5rem;padding:.48rem .82rem;border-radius:999px;font-size:.7rem;font-weight:800;letter-spacing:.11em;text-transform:uppercase}
+.hero-title{text-shadow:4px 4px 0 rgba(32,199,232,.15)}
+.archive-card img{aspect-ratio:4/3;object-fit:cover}
+.pulse{animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(255,94,26,.28)}50%{box-shadow:0 0 0 9px rgba(255,94,26,0)}}
+</style>
+</head>
+<body>
+
+<!-- Top bar -->
+<div class="bg-slate-950 text-white text-xs py-2.5 px-4 text-center">
+  <div class="max-w-7xl mx-auto flex flex-wrap justify-center items-center gap-2.5">
+    <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-400/10 border border-orange-400/20 text-orange-300 font-bold uppercase tracking-wider">
+      ☀️ Summer 2027
+    </span>
+    <span class="text-white/30">•</span>
+    <span class="text-white/70">Registration opens <strong class="text-white">01.10.2026</strong></span>
+  </div>
+</div>
+
+<!-- Navigation -->
+<nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-xl border-b border-slate-200/70">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="h-20 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3">
+        <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-orange-400 to-orange-600 text-white flex items-center justify-center font-black text-2xl shadow-lg">A</div>
+        <div>
+          <div class="heading-font font-bold text-2xl">Aurinko<span class="text-orange-500">Lab</span></div>
+          <div class="text-[8px] uppercase tracking-[.28em] font-extrabold text-slate-400">Camps • Making • Fun</div>
+        </div>
+      </a>
+      <div class="hidden md:flex items-center gap-8 text-sm font-bold">
+        <a href="#registration" class="hover:text-orange-500 transition">Summer 2027</a>
+        <a href="#archive" class="hover:text-orange-500 transition">Camp Archive</a>
+        <a href="#feedback" class="hover:text-orange-500 transition">Feedback</a>
+        <a href="#registration" class="bg-orange-500 hover:bg-orange-600 text-white px-5 py-3 rounded-full shadow-lg shadow-orange-500/20 transition">Register 🚀</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<header class="max-w-6xl mx-auto px-5 pt-14 pb-10 md:pt-20 text-center">
+  <span class="section-label bg-purple-50 border border-purple-200 text-purple-700">🔭 Next summer is loading...</span>
+  <h1 class="heading-font hero-title text-5xl sm:text-6xl md:text-7xl font-black tracking-tight mt-5 leading-[.98]">
+    Summer Camps<br><span class="text-orange-500">2027</span>
+  </h1>
+  <p class="max-w-2xl mx-auto mt-6 text-lg md:text-xl text-slate-600 leading-relaxed">
+    The next AurinkoLab summer programme is coming. Camp details will be announced later — but you can already save the date for registration.
+  </p>
+  <div class="mt-7 flex flex-wrap justify-center gap-3">
+    <span class="sticker bg-yellow-100 border-2 border-yellow-200 px-4 py-2 rounded-full text-sm font-extrabold">🔧 Build</span>
+    <span class="sticker bg-cyan-100 border-2 border-cyan-200 px-4 py-2 rounded-full text-sm font-extrabold">🤖 Experiment</span>
+    <span class="sticker bg-purple-100 border-2 border-purple-200 px-4 py-2 rounded-full text-sm font-extrabold">😎 Have fun</span>
+  </div>
+</header>
+
+<!-- Registration announcement -->
+<section id="registration" class="max-w-6xl mx-auto px-5 py-6">
+  <div class="glass rounded-[2rem] p-7 md:p-10 border-2 border-orange-200 bg-gradient-to-br from-orange-50 via-white to-blue-50 relative overflow-hidden">
+    <div class="absolute -right-16 -top-16 w-48 h-48 bg-yellow-300/30 rounded-full blur-2xl"></div>
+    <div class="relative grid md:grid-cols-[180px_1fr_auto] gap-7 items-center">
+      <div class="mx-auto w-36 h-36 rounded-3xl bg-white border-2 border-orange-200 shadow-lg flex flex-col items-center justify-center rotate-[-3deg]">
+        <div class="text-xs font-black uppercase tracking-widest text-orange-500">Registration</div>
+        <div class="heading-font text-5xl font-black mt-1">01</div>
+        <div class="heading-font text-xl font-black">OCT</div>
+        <div class="text-xs font-bold text-slate-400">2026</div>
+      </div>
+      <div>
+        <span class="section-label bg-orange-100 border border-orange-200 text-orange-700"> Save the date</span>
+        <h2 class="heading-font text-3xl md:text-4xl font-black mt-3">Summer 2027 registration</h2>
+        <p class="text-slate-600 mt-2 text-lg leading-relaxed">
+          Registration will be available from <strong>01.10.2026</strong>.
+          There are no upcoming camp details to book yet — check back when the new programme is published.
+        </p>
+      </div>
+      <div class="text-center md:text-right">
+        <div class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-slate-900 text-white font-extrabold pulse">
+          🔔 01.10.2026
+        </div>
+        <div class="text-xs font-bold text-slate-400 mt-2">Registration opens</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- What is known now -->
+<section class="max-w-6xl mx-auto px-5 py-12">
+  <div class="grid md:grid-cols-3 gap-5">
+    <div class="card glass rounded-3xl p-6">
+      <!-- <div class="text-3xl">📅</div> -->
+      <h3 class="heading-font text-xl font-black mt-4">Date to remember</h3>
+      <p class="text-slate-600 mt-2">Registration for Summer 2027 opens on <strong>1 October 2026</strong>.</p>
+    </div>
+    <div class="card glass rounded-3xl p-6">
+      <!-- <div class="text-3xl">🔍</div> -->
+      <h3 class="heading-font text-xl font-black mt-4">Camp details later</h3>
+      <p class="text-slate-600 mt-2">There are currently no confirmed upcoming camp details shown on this page.</p>
+    </div>
+    <div class="card glass rounded-3xl p-6">
+      <!-- <div class="text-3xl">📚</div> -->
+      <h3 class="heading-font text-xl font-black mt-4">See what we did</h3>
+      <p class="text-slate-600 mt-2">Explore the archive below for the Science Camp and LUMO Camp.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Archive -->
+<section id="archive" class="bg-gradient-to-b from-purple-50/80 to-white border-y border-purple-100">
+  <div class="max-w-6xl mx-auto px-5 py-16">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-9">
+      <div>
+        <span class="section-label bg-white border border-purple-200 text-purple-700">📚 Past adventures</span>
+        <h2 class="heading-font text-4xl md:text-5xl font-black mt-4">Camp Archive</h2>
+        <p class="text-slate-600 mt-2 max-w-2xl">
+          Previous camps now live here — perfect for seeing what AurinkoLab has been up to.
+        </p>
+      </div>
+      <span class="text-sm font-extrabold text-slate-400 uppercase tracking-widest">2026 & earlier</span>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-7">
+      <!-- Science Camp -->
+      <article class="archive-card card bg-white rounded-[2rem] overflow-hidden border-2 border-slate-100 shadow-lg">
+        <div class="h-44 bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+          <div class="text-center text-white">
+            <div class="text-6xl">🔬</div>
+            <div class="heading-font text-2xl font-black mt-2">Science Camp</div>
+          </div>
+        </div>
+        <div class="p-7">
+          <div class="flex justify-between items-start gap-4">
+            <h3 class="heading-font text-2xl font-black">STEM at Science Camp</h3>
+            <span class="px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-extrabold">ARCHIVED</span>
+          </div>
+          <p class="text-slate-600 mt-3 leading-relaxed">
+            A hands-on summer science and art camp with creative engineering challenges, interactive physics and team discovery.
+          </p>
+          <div class="mt-5 flex flex-wrap gap-2 text-xs font-bold">
+            <span class="bg-blue-50 text-blue-700 px-3 py-1.5 rounded-full">🔬 STEM</span>
+            <span class="bg-yellow-50 text-yellow-700 px-3 py-1.5 rounded-full">🎨 Creative</span>
+            <span class="bg-green-50 text-green-700 px-3 py-1.5 rounded-full">👥 Teamwork</span>
+          </div>
+          <div class="mt-5 text-sm font-bold text-slate-500">📍 Makasiini, Espoo</div>
+        </div>
+      </article>
+
+      <!-- LUMO -->
+      <article class="archive-card card bg-white rounded-[2rem] overflow-hidden border-2 border-slate-100 shadow-lg">
+        <div class="h-44 bg-gradient-to-br from-orange-400 to-pink-500 flex items-center justify-center">
+          <div class="text-center text-white">
+            <div class="text-6xl">🏎️</div>
+            <div class="heading-font text-2xl font-black mt-2">LUMO Camp</div>
+          </div>
+        </div>
+        <div class="p-7">
+          <div class="flex justify-between items-start gap-4">
+            <h3 class="heading-font text-2xl font-black">LUMO CAMP</h3>
+            <span class="px-3 py-1 rounded-full bg-orange-50 text-orange-700 text-xs font-extrabold">ARCHIVED</span>
+          </div>
+          <p class="text-slate-600 mt-3 leading-relaxed">
+            A residential adventure featuring go-kart engineering, robotics, 3D design, engineering challenges, biology, languages and a final showcase.
+          </p>
+          <div class="mt-5 flex flex-wrap gap-2 text-xs font-bold">
+            <span class="bg-orange-50 text-orange-700 px-3 py-1.5 rounded-full">🏎️ Go-karts</span>
+            <span class="bg-purple-50 text-purple-700 px-3 py-1.5 rounded-full">🤖 Robotics</span>
+            <span class="bg-cyan-50 text-cyan-700 px-3 py-1.5 rounded-full">🧩 3D Design</span>
+          </div>
+          <div class="mt-5 text-sm font-bold text-slate-500">📍 Luukki, Espoo</div>
+        </div>
+      </article>
+    </div>
+
+    <div class="mt-8 text-center">
+      <p class="text-sm text-slate-500">
+        Previous camp information is shown for archive purposes. New Summer 2027 camp information will appear here once announced.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Feedback -->
+<section id="feedback" class="max-w-6xl mx-auto px-5 py-16">
+  <div class="text-center mb-8">
+    <span class="section-label bg-pink-50 border border-pink-200 text-pink-600">💬 Camp feedback</span>
+    <h2 class="heading-font text-4xl md:text-5xl font-black mt-4">What families said</h2>
+    <p class="text-slate-600 mt-2">A little love from our camp community.</p>
+  </div>
+
+  <!-- Language tabs -->
+  <div class="flex flex-wrap justify-center gap-2 mb-8" role="tablist" aria-label="Feedback languages">
+    <button class="lang-btn active px-5 py-2.5 rounded-full font-extrabold text-sm bg-slate-900 text-white" data-lang="en">🇬🇧 English</button>
+    <button class="lang-btn px-5 py-2.5 rounded-full font-extrabold text-sm bg-white border-2 border-slate-200 text-slate-700" data-lang="sv">🇸🇪 Svenska</button>
+    <button class="lang-btn px-5 py-2.5 rounded-full font-extrabold text-sm bg-white border-2 border-slate-200 text-slate-700" data-lang="ru">🇷🇺 Русский</button>
+    <button class="lang-btn px-5 py-2.5 rounded-full font-extrabold text-sm bg-white border-2 border-slate-200 text-slate-700" data-lang="fi">🇫🇮 Suomi</button>
+  </div>
+
+  <div id="feedback-en" class="feedback-language grid md:grid-cols-3 gap-5">
+    <article class="card glass rounded-3xl p-6">
+      <div class="text-yellow-400 text-lg">★★★★★</div>
+      <p class="mt-4 text-slate-700 leading-relaxed">
+        “..My son really liked the programme and would gladly come again! 😊..”
+      </p>
+      <div class="mt-5 text-sm font-extrabold text-slate-500">— Parent feedback</div>
+    </article>
+    <article class="card glass rounded-3xl p-6">
+      <div class="text-yellow-400 text-lg">★★★★★</div>
+      <p class="mt-4 text-slate-700 leading-relaxed">
+        “A really great camp with dedicated leaders! The children learned so much and had a lot of fun.”
+      </p>
+      <div class="mt-5 text-sm font-extrabold text-slate-500">— Parent feedback</div>
+    </article>
+    <article class="card glass rounded-3xl p-6">
+      <div class="text-yellow-400 text-lg">★★★★★</div>
+      <p class="mt-4 text-slate-700 leading-relaxed">
+        “Thank you for a fantastic camp! My son came home every day with new ideas and a big smile.”
+      </p>
+      <div class="mt-5 text-sm font-extrabold text-slate-500">— Parent feedback</div>
+    </article>
+  </div>
+
+  <div id="feedback-sv" class="feedback-language hidden grid md:grid-cols-3 gap-5">
+    <article class="card glass rounded-3xl p-6">
+      <div class="text-yellow-400 text-lg">★★★★★</div>
+      <p class="mt-4 text-slate-700 leading-relaxed">
+        “.. tyckte mycket bra om programmet och kommer gärna en annan gång! 😊”
+      </p>
+      <div class="mt-5 text-sm font-extrabold text-slate-500">— Förälder</div>
+    </article>
+    <article class="card glass rounded-3xl p-6">
+      <div class="text-yellow-400 text-lg">★★★★★</div>
+      <p class="mt-4 text-slate-700 leading-relaxed">
+        “Superbra läger med engagerade ledare! Barnen lärde sig massor och hade verkligen roligt.”
+      </p>
+      <div class="mt-5 text-sm font-extrabold text-slate-500">— Förälder</div>
+    </article>
+    <article class="card glass rounded-3xl p-6">
+      <div class="text-yellow-400 text-lg">★★★★★</div>
+      <p class="mt-4 text-slate-700 leading-relaxed">
+        “Tack för ett fantastiskt läger! Min son kom hem varje dag med nya idéer och ett stort leende.”
+      </p>
+      <div class="mt-5 text-sm font-extrabold text-slate-500">— Förälder</div>
+    </article>
+  </div>
+
+  <div id="feedback-ru" class="feedback-language hidden grid md:grid-cols-3 gap-5">
+    <article class="card glass rounded-3xl p-6">
+      <div class="text-yellow-400 text-lg">★★★★★</div>
+      <p class="mt-4 text-slate-700 leading-relaxed">
+        “ Большое спасибо! Сыну очень понравилась программа, и он с удовольствием придёт ещё раз! 😊”
+      </p>
+      <div class="mt-5 text-sm font-extrabold text-slate-500">— Отзыв родителя</div>
+    </article>
+    <article class="card glass rounded-3xl p-6">
+      <div class="text-yellow-400 text-lg">★★★★★</div>
+      <p class="mt-4 text-slate-700 leading-relaxed">
+        “Отличный лагерь с очень увлечёнными руководителями! Дети многому научились и отлично провели время.”
+      </p>
+      <div class="mt-5 text-sm font-extrabold text-slate-500">— Отзыв родителя</div>
+    </article>
+    <article class="card glass rounded-3xl p-6">
+      <div class="text-yellow-400 text-lg">★★★★★</div>
+      <p class="mt-4 text-slate-700 leading-relaxed">
+        “Спасибо за замечательный лагерь! Мой сын каждый день возвращался домой с новыми идеями и большой улыбкой.”
+      </p>
+      <div class="mt-5 text-sm font-extrabold text-slate-500">— Отзыв родителя</div>
+    </article>
+  </div>
+
+  <div id="feedback-fi" class="feedback-language hidden grid md:grid-cols-3 gap-5">
+    <article class="card glass rounded-3xl p-6">
+      <div class="text-yellow-400 text-lg">★★★★★</div>
+      <p class="mt-4 text-slate-700 leading-relaxed">
+        “Kiitos paljon kurssista! Poikani piti ohjelmasta todella paljon ja tulee mielellään uudestaan! 😊”
+      </p>
+      <div class="mt-5 text-sm font-extrabold text-slate-500">— Vanhemman palaute</div>
+    </article>
+    <article class="card glass rounded-3xl p-6">
+      <div class="text-yellow-400 text-lg">★★★★★</div>
+      <p class="mt-4 text-slate-700 leading-relaxed">
+        “Todella hieno leiri ja omistautuneet ohjaajat! Lapset oppivat paljon ja heillä oli todella hauskaa.”
+      </p>
+      <div class="mt-5 text-sm font-extrabold text-slate-500">— Vanhemman palaute</div>
+    </article>
+    <article class="card glass rounded-3xl p-6">
+      <div class="text-yellow-400 text-lg">★★★★★</div>
+      <p class="mt-4 text-slate-700 leading-relaxed">
+        “Kiitos upeasta leiristä! Poikani tuli joka päivä kotiin uusien ideoiden ja suuren hymyn kanssa.”
+      </p>
+      <div class="mt-5 text-sm font-extrabold text-slate-500">— Vanhemman palaute</div>
+    </article>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="max-w-6xl mx-auto px-5 pb-16">
+  <div class="rounded-[2rem] bg-slate-950 text-white p-8 md:p-12 text-center relative overflow-hidden">
+    <div class="absolute -left-16 -top-16 w-48 h-48 bg-orange-500/20 rounded-full blur-3xl"></div>
+    <div class="absolute -right-16 -bottom-16 w-56 h-56 bg-cyan-400/20 rounded-full blur-3xl"></div>
+    <div class="relative">
+      <h2 class="heading-font text-3xl md:text-4xl font-black mt-4">See you in Summer 2027!</h2>
+      <p class="text-slate-300 mt-3">Registration opens on <strong class="text-white">01.10.2026</strong>.</p>
+      <a href="#registration" class="inline-flex mt-6 bg-orange-500 hover:bg-orange-600 text-white font-extrabold px-7 py-3.5 rounded-full transition shadow-lg shadow-orange-500/20">
+        Save the date
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-slate-950 text-slate-400 py-10 px-5 text-center">
+  <div class="heading-font text-2xl font-black text-white">Aurinko<span class="text-orange-400">Lab</span></div>
+  <p class="text-sm mt-2">Camps • Science • Engineering • Fun</p>
+  <p class="text-xs text-slate-600 mt-4">Summer 2027 registration opens 01.10.2026.</p>
+</footer>
+
+
+<script>
+document.querySelectorAll('.lang-btn').forEach(button => {
+  button.addEventListener('click', () => {
+    const lang = button.dataset.lang;
+
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.remove('active', 'bg-slate-900', 'text-white');
+      btn.classList.add('bg-white', 'border-2', 'border-slate-200', 'text-slate-700');
+    });
+
+    button.classList.add('active', 'bg-slate-900', 'text-white');
+    button.classList.remove('bg-white', 'border-2', 'border-slate-200', 'text-slate-700');
+
+    document.querySelectorAll('.feedback-language').forEach(section => {
+      section.classList.add('hidden');
+    });
+
+    document.getElementById('feedback-' + lang).classList.remove('hidden');
+  });
+});
+</script>
+
+</body>
+</html>
